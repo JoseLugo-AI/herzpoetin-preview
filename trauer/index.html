@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Herzpoetin | Trauerrednerin in der Oberpfalz · Würdevoller Abschied</title>
+  <meta name="description" content="Trauerreden und freie Trauerfeiern in der Oberpfalz und ganz Bayern. Einfühlsam, würdevoll und persönlich. Isabella Dietl, die Herzpoetin aus Hemau." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Herzpoetin · Trauerrednerin" />
+  <meta property="og:description" content="Worte, die tragen, wenn eigene fehlen. Trauerreden in der Oberpfalz und ganz Bayern." />
+  <meta property="og:image" content="https://images.pexels.com/photos/29451794/pexels-photo-29451794.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2214%22 fill=%22%232D4A3E%22/><text x=%2250%22 y=%2270%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23FDFAF6%22 font-family=%22Georgia%22 font-style=%22italic%22>H</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: #FDFAF6;
+      color: #2C3E36;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; transition: color 0.3s; }
+
+    body[data-lang="en"] .de { display: none !important; }
+    body[data-lang="de"] .en { display: none !important; }
+
+    /* ── Nav ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+    }
+    .nav.scrolled {
+      background: rgba(253, 250, 246, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(44,62,54,0.08);
+    }
+    .nav-monogram {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      font-style: italic;
+      color: #FDFAF6;
+      transition: color 0.3s;
+    }
+    .nav.scrolled .nav-monogram { color: #2D4A3E; }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(253,250,246,0.85);
+      transition: color 0.3s;
+    }
+    .nav.scrolled .nav-links a { color: #888; }
+    .nav-links a:hover, .nav.scrolled .nav-links a:hover { color: #9B6B4A; }
+    .lang-toggle {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(253,250,246,0.85);
+      background: none;
+      border: 1px solid rgba(253,250,246,0.4);
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+    .nav.scrolled .lang-toggle { color: #2D4A3E; border-color: rgba(44,62,54,0.25); }
+    .lang-toggle:hover { background: #9B6B4A; border-color: #9B6B4A; color: #FDFAF6; }
+    @media (max-width: 768px) {
+      .nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.pexels.com/photos/29451794/pexels-photo-29451794.jpeg?auto=compress&cs=tinysrgb&w=1920');
+      background-size: cover;
+      background-position: center 60%;
+      animation: heroZoom 18s ease-out forwards;
+    }
+    @keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(44,62,54,0.35) 0%, rgba(44,62,54,0.2) 55%, #FDFAF6 100%);
+    }
+    .hero-content { position: relative; z-index: 2; padding: 0 1.5rem; }
+    .hero-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: rgba(253,250,246,0.9);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 1px 12px rgba(44,62,54,0.4);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 9vw, 5.5rem);
+      font-weight: 500;
+      color: #FDFAF6;
+      line-height: 1;
+      text-shadow: 0 2px 24px rgba(44,62,54,0.45);
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 3vw, 1.6rem);
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(253,250,246,0.95);
+      margin-top: 1rem;
+      text-shadow: 0 1px 16px rgba(44,62,54,0.45);
+    }
+    .hero-cta {
+      display: inline-block;
+      background: #FDFAF6;
+      color: #2D4A3E;
+      padding: 0.85rem 2.5rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 2.25rem;
+      transition: all 0.3s;
+    }
+    .hero-cta:hover { background: #9B6B4A; color: #FDFAF6; transform: translateY(-2px); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      font-size: 0.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(44,62,54,0.55);
+    }
+
+    /* ── Intro ── */
+    .intro {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .intro-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #9B6B4A;
+      margin-bottom: 1.25rem;
+    }
+    .intro p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #2C3E36;
+    }
+
+    /* ── Category cards ── */
+    .categories {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1rem 2rem 5rem;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .category-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+      display: block;
+    }
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .category-card:hover img { transform: scale(1.06); }
+    .category-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(45,74,62,0.65) 0%, rgba(45,74,62,0.15) 60%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 2rem;
+      transition: background 0.3s;
+    }
+    .category-card:hover .category-card-overlay { background: linear-gradient(to top, rgba(45,74,62,0.8) 0%, rgba(45,74,62,0.3) 70%); }
+    .category-card-overlay h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-style: italic;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .category-card-overlay span {
+      font-size: 0.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 0.4rem 1rem;
+      transition: all 0.3s;
+    }
+    .category-card:hover .category-card-overlay span {
+      background: #fff;
+      color: #2D4A3E;
+      border-color: #fff;
+    }
+
+    /* ── Service sections ── */
+    .services-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem;
+    }
+    .services-header { text-align: center; margin-bottom: 1.5rem; }
+    .services-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      font-weight: 400;
+      font-style: italic;
+      color: #2D4A3E;
+    }
+    .services-lede {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.8;
+      max-width: 560px;
+      margin: 0 auto 3rem;
+    }
+    .service-item {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(44,62,54,0.1);
+      align-items: start;
+      transition: background 0.3s;
+      border-radius: 4px;
+    }
+    .service-item:last-of-type { border-bottom: 1px solid rgba(44,62,54,0.1); }
+    .service-item:hover { background: rgba(155,107,74,0.04); }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #D5CFC7;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+    .service-item:hover .service-num { color: #9B6B4A; }
+    .service-item h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #2D4A3E;
+      margin-bottom: 0.5rem;
+    }
+    .service-item p {
+      font-size: 0.8rem;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    .alt-band { background: #F2EDE8; }
+
+    /* availability note */
+    .avail-note {
+      text-align: center;
+      margin: 2.5rem auto 0;
+      max-width: 480px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(155,107,74,0.3);
+      border-radius: 8px;
+      background: rgba(155,107,74,0.04);
+    }
+    .avail-note p {
+      font-size: 0.78rem;
+      color: #6b5d50;
+      line-height: 1.7;
+    }
+    .avail-note strong { color: #9B6B4A; font-weight: 700; }
+
+    /* ── Full-width image break ── */
+    .full-image {
+      width: 100%;
+      overflow: hidden;
+      height: 380px;
+    }
+    .full-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Quote band ── */
+    .quote-band {
+      background: #2D4A3E;
+      color: #FDFAF6;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .quote-band .label {
+      font-size: 0.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #C9A87C;
+      margin-bottom: 1rem;
+    }
+    .quote-band h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 400;
+      font-style: italic;
+      max-width: 560px;
+      margin: 0 auto 1rem;
+      line-height: 1.35;
+    }
+    .quote-band p {
+      font-size: 0.8rem;
+      color: rgba(253,250,246,0.55);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Testimonials ── */
+    .testimonials {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .testimonials-header {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      font-weight: 400;
+      font-style: italic;
+      color: #2D4A3E;
+      margin-bottom: 3rem;
+    }
+    .testimonial { padding: 0 1rem; margin-bottom: 3rem; }
+    .testimonial:last-of-type { margin-bottom: 1.5rem; }
+    .testimonial blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #2C3E36;
+      margin-bottom: 1rem;
+    }
+    .testimonial cite {
+      font-style: normal;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #9B6B4A;
+    }
+    .testimonial-note {
+      font-size: 0.6rem;
+      color: #C4BDB2;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── About ── */
+    .about {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .about-portrait {
+      aspect-ratio: 3/4;
+      border-radius: 8px;
+      background: linear-gradient(160deg, #E4E9E2 0%, #CDD8CE 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .about-portrait .mono {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      font-style: italic;
+      font-weight: 500;
+      color: #2D4A3E;
+      line-height: 1;
+    }
+    .about-portrait .hint {
+      font-size: 0.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(45,74,62,0.45);
+    }
+    .about-text .about-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #9B6B4A;
+      margin-bottom: 1rem;
+    }
+    .about-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: #2D4A3E;
+      margin-bottom: 1.25rem;
+    }
+    .about-text p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      text-align: center;
+      padding: 5rem 2rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #2D4A3E;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .cta-phone-big {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      font-weight: 500;
+      color: #2D4A3E;
+      margin-bottom: 1.5rem;
+      transition: color 0.3s;
+    }
+    .cta-phone-big:hover { color: #9B6B4A; }
+    .cta-btn {
+      display: inline-block;
+      background: #2D4A3E;
+      color: #FDFAF6;
+      padding: 0.85rem 2.5rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.3s;
+    }
+    .cta-btn:hover { background: #9B6B4A; transform: translateY(-2px); }
+
+    /* ── Footer ── */
+    .footer {
+      background: linear-gradient(to bottom, #FDFAF6 0%, #E8E3DB 100%);
+      padding: 4rem 2.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      font-style: italic;
+      color: #2D4A3E;
+      margin-bottom: 0.5rem;
+    }
+    .footer-col p {
+      font-size: 0.75rem;
+      color: #888;
+      line-height: 1.9;
+    }
+    .footer-col a { color: #9B6B4A; }
+    .footer-col a:hover { color: #2D4A3E; }
+    .footer-copy {
+      max-width: 900px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(44,62,54,0.1);
+      text-align: center;
+      font-size: 0.6rem;
+      color: #bbb;
+    }
+    .footer-copy a { color: #9B6B4A; }
+
+    @media (max-width: 768px) {
+      .category-grid { grid-template-columns: 1fr; }
+      .category-card { aspect-ratio: 4/3; }
+      .service-item { grid-template-columns: 44px 1fr; gap: 1rem; }
+      .about { grid-template-columns: 1fr; gap: 2rem; }
+      .about-portrait { max-width: 280px; margin: 0 auto; }
+      .footer-inner { flex-direction: column; gap: 1.5rem; }
+      .full-image { height: 260px; }
+    }
+  </style>
+</head>
+<body data-lang="de">
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-monogram">Herzpoetin</div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#trauerrede"><span class="de">Trauerrede</span><span class="en">Farewells</span></a>
+        <a href="#trauung"><span class="de">Freie Trauung</span><span class="en">Weddings</span></a>
+        <a href="#ueber-mich"><span class="de">Über mich</span><span class="en">About</span></a>
+        <a href="#kontakt"><span class="de">Kontakt</span><span class="en">Contact</span></a>
+      </div>
+      <button class="lang-toggle" id="langToggle" aria-label="Sprache wechseln">EN</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-label">
+        <span class="de">Trauerrednerin · Oberpfalz & Bayern</span>
+        <span class="en">Eulogist & Celebrant · Bavaria</span>
+      </div>
+      <h1>Herzpoetin</h1>
+      <div class="hero-tagline">
+        <span class="de">Worte, die tragen, wenn eigene fehlen.</span>
+        <span class="en">Words that carry, when your own are missing.</span>
+      </div>
+      <a href="#kontakt" class="hero-cta">
+        <span class="de">Kontakt aufnehmen</span><span class="en">Get in touch</span>
+      </a>
+    </div>
+    <div class="hero-scroll">
+      <span class="de">Entdecken</span><span class="en">Scroll</span>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="intro reveal">
+    <div class="intro-label">
+      <span class="de">Willkommen</span><span class="en">Welcome</span>
+    </div>
+    <p class="de">Ein Abschied lässt sich nicht wiederholen. Er verdient Worte, die dem Menschen gerecht werden, den Sie verabschieden: ehrlich, warm und ohne leere Floskeln. Diese Worte zu finden ist meine Aufgabe, damit Sie in diesen Tagen den Kopf frei haben für das, was zählt.</p>
+    <p class="en">A farewell cannot be repeated. It deserves words worthy of the person you are saying goodbye to: honest, warm, and free of empty phrases. Finding those words is my task, so that in these days your mind is free for what matters.</p>
+  </section>
+
+  <!-- Category cards -->
+  <section class="categories reveal">
+    <div class="category-grid">
+      <a class="category-card" href="#trauerrede">
+        <img src="https://images.pexels.com/photos/29347337/pexels-photo-29347337.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800" alt="Stiller Waldweg im Morgenlicht" loading="lazy" />
+        <div class="category-card-overlay">
+          <h3><span class="de">Trauerrede</span><span class="en">Funeral Eulogy</span></h3>
+          <span><span class="de">Mehr erfahren</span><span class="en">Learn more</span></span>
+        </div>
+      </a>
+      <a class="category-card" href="#trauung">
+        <img src="https://images.pexels.com/photos/30335822/pexels-photo-30335822.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800" alt="Freie Trauung bei goldenem Abendlicht" loading="lazy" />
+        <div class="category-card-overlay">
+          <h3><span class="de">Freie Trauung</span><span class="en">Wedding Ceremony</span></h3>
+          <span><span class="de">Mehr erfahren</span><span class="en">Learn more</span></span>
+        </div>
+      </a>
+      <a class="category-card" href="#kontakt">
+        <img src="https://images.pexels.com/photos/20191414/pexels-photo-20191414.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800" alt="Hände von Eltern und Kind" loading="lazy" />
+        <div class="category-card-overlay">
+          <h3><span class="de">Willkommensfest</span><span class="en">Baby Welcoming</span></h3>
+          <span><span class="de">Auf Anfrage</span><span class="en">On request</span></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Farewell section (primary) -->
+  <section class="services-section reveal" id="trauerrede">
+    <div class="services-header">
+      <h2><span class="de">Abschied & Trauerrede</span><span class="en">Farewell & Eulogy</span></h2>
+    </div>
+    <p class="services-lede de">Wenn Worte am schwersten fallen, dürfen Sie sie mir anvertrauen. In einem ruhigen Gespräch höre ich zu und verwandle Erinnerungen in eine Rede, die ein Leben würdigt. Damit der Abschied so persönlich wird wie der Mensch, dem er gilt.</p>
+    <p class="services-lede en">When words are hardest to find, you may entrust them to me. In a quiet conversation I listen, and turn memories into a eulogy that honors a life. So the farewell becomes as personal as the person it is for.</p>
+    <div class="service-item">
+      <div class="service-num">01</div>
+      <div>
+        <h3><span class="de">Das Gespräch</span><span class="en">The conversation</span></h3>
+        <p class="de">Ich komme zu Ihnen nach Hause oder wir telefonieren, ganz wie es für Sie leichter ist. Sie erzählen von dem Menschen, ich höre zu.</p>
+        <p class="en">I come to your home or we speak on the phone, whichever is easier for you. You tell me about the person; I listen.</p>
+      </div>
+    </div>
+    <div class="service-item">
+      <div class="service-num">02</div>
+      <div>
+        <h3><span class="de">Die Lebensrede</span><span class="en">The eulogy</span></h3>
+        <p class="de">Innerhalb weniger Tage entsteht eine Rede, die das Leben würdigt, Trost spendet und Raum für ein Lächeln lässt.</p>
+        <p class="en">Within a few days I write a eulogy that honors the life lived, offers comfort, and leaves room for a smile.</p>
+      </div>
+    </div>
+    <div class="service-item">
+      <div class="service-num">03</div>
+      <div>
+        <h3><span class="de">Die Trauerfeier</span><span class="en">The service</span></h3>
+        <p class="de">Ich gestalte und halte die Feier in enger Abstimmung mit Ihnen und dem Bestattungshaus. Sie müssen an nichts weiter denken.</p>
+        <p class="en">I shape and hold the service in close coordination with you and the funeral home. There is nothing more you need to think of.</p>
+      </div>
+    </div>
+    <div class="avail-note">
+      <p class="de"><strong>Im Trauerfall zählt Zeit.</strong> Sie erreichen mich auch kurzfristig, in der Regel noch am selben Tag.</p>
+      <p class="en"><strong>In a time of loss, time matters.</strong> You can reach me at short notice, usually on the same day.</p>
+    </div>
+  </section>
+
+  <!-- Image break: candle -->
+  <div class="full-image">
+    <img src="https://images.pexels.com/photos/10565560/pexels-photo-10565560.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1600" alt="Eine ruhig brennende Kerze" loading="lazy" />
+  </div>
+
+  <!-- Wedding section (secondary, on cream band) -->
+  <div class="alt-band">
+    <section class="services-section reveal" id="trauung">
+      <div class="services-header">
+        <h2><span class="de">Eure freie Trauung</span><span class="en">Your Wedding Ceremony</span></h2>
+      </div>
+      <p class="services-lede de">Auch die schönsten Momente verdienen echte Worte. Als freie Rednerin gestalte ich Trauungen, die eure Geschichte erzählen: frei von Vorgaben, an jedem Ort, der euch etwas bedeutet, mit den kleinen Momenten, über die ihr heute noch lacht.</p>
+      <p class="services-lede en">The most beautiful moments deserve true words too. As a celebrant I create wedding ceremonies that tell your story: free of conventions, at any place that means something to you, with the small moments you still laugh about.</p>
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div>
+          <h3><span class="de">Kennenlernen</span><span class="en">Getting to know you</span></h3>
+          <p class="de">Wir treffen uns bei einem Kaffee oder per Video. Ihr erzählt, ich höre zu. Das erste Gespräch ist kostenlos und unverbindlich.</p>
+          <p class="en">We meet over coffee or on a video call. You talk, I listen. The first conversation is free and without obligation.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div>
+          <h3><span class="de">Eure Geschichte</span><span class="en">Your story</span></h3>
+          <p class="de">Aus euren Erinnerungen entsteht eine Rede, die es nur einmal gibt. Kein Baustein, keine Schablone. Jedes Wort ist für euch geschrieben.</p>
+          <p class="en">Your memories become a ceremony that exists only once. No building blocks, no templates. Every word is written for you.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div>
+          <h3><span class="de">Der große Tag</span><span class="en">The big day</span></h3>
+          <p class="de">Ich führe durch eure Zeremonie, mit Ritualen, die zu euch passen, und der Ruhe, die ihr an diesem Tag braucht.</p>
+          <p class="en">I guide you through your ceremony, with rituals that fit who you are and the calm you need on that day.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Quote band -->
+  <section class="quote-band reveal">
+    <div class="label">Herzpoetin</div>
+    <h3>
+      <span class="de">„Erinnerungen verdienen Worte, die bleiben."</span>
+      <span class="en">"Memories deserve words that stay."</span>
+    </h3>
+    <p class="de">Trauerrednerin und freie Rednerin mit Herz. Zu Hause in Hemau, zwischen Regensburg und Neumarkt, unterwegs in der ganzen Oberpfalz, Niederbayern und darüber hinaus.</p>
+    <p class="en">Eulogist and celebrant who leads with heart. At home in Hemau between Regensburg and Neumarkt, on the road across the Oberpfalz, Lower Bavaria, and beyond.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials reveal">
+    <div class="testimonials-header">
+      <span class="de">Stimmen</span><span class="en">Kind Words</span>
+    </div>
+    <div class="testimonial">
+      <blockquote class="de">„Sie hat unseren Vater nie kennengelernt, und doch klang jedes Wort, als wären sie ein Leben lang befreundet gewesen. Danke für diesen würdevollen Abschied."</blockquote>
+      <blockquote class="en">"She never met our father, and yet every word sounded as if they had been friends for a lifetime. Thank you for such a dignified farewell."</blockquote>
+      <cite><span class="de">Familie H. · Trauerrede</span><span class="en">Family H. · Eulogy</span></cite>
+    </div>
+    <div class="testimonial">
+      <blockquote class="de">„Zwischen dem ersten Anruf und der Trauerfeier lagen nur vier Tage. Frau Dietl hat in dieser Zeit zugehört, geschrieben und uns getragen. Die Rede war ein Geschenk."</blockquote>
+      <blockquote class="en">"Only four days lay between the first call and the service. In that time Ms. Dietl listened, wrote, and carried us. The eulogy was a gift."</blockquote>
+      <cite><span class="de">Familie S. · Trauerfeier</span><span class="en">Family S. · Funeral service</span></cite>
+    </div>
+    <div class="testimonial">
+      <blockquote class="de">„Isabella hat unsere Geschichte so erzählt, dass selbst der Bräutigam Tränen in den Augen hatte. Unsere Gäste sprechen heute noch von dieser Trauung."</blockquote>
+      <blockquote class="en">"Isabella told our story in a way that brought tears even to the groom's eyes. Our guests still talk about that ceremony."</blockquote>
+      <cite><span class="de">Julia & Markus · Freie Trauung</span><span class="en">Julia & Markus · Wedding</span></cite>
+    </div>
+    <div class="testimonial-note">
+      <span class="de">Beispieltexte · echte Stimmen folgen</span><span class="en">Sample quotes · real reviews to follow</span>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about reveal" id="ueber-mich">
+    <div class="about-portrait">
+      <div class="mono">I</div>
+      <div class="hint"><span class="de">Ihr Foto</span><span class="en">Your photo</span></div>
+    </div>
+    <div class="about-text">
+      <div class="about-label"><span class="de">Über mich</span><span class="en">About me</span></div>
+      <h2><span class="de">Ich bin Isabella.</span><span class="en">I am Isabella.</span></h2>
+      <p class="de">Zu Hause in Hemau, zwischen Regensburg und Neumarkt, mitten in der Oberpfalz. Als Herzpoetin begleite ich Familien und Paare durch die größten Momente ihres Lebens: durch den Abschied, durch das Ja und durch alles, was ein Leben ausmacht.</p>
+      <p class="en">At home in Hemau, between Regensburg and Neumarkt, in the heart of the Oberpfalz. As the Herzpoetin I walk with families and couples through the biggest moments of their lives: through the goodbye, through the yes, and through everything that makes up a life.</p>
+      <p class="de">Ich glaube, dass eine gute Rede nicht aus schönen Worten besteht, sondern aus wahren. Deshalb höre ich lieber einmal mehr zu, bevor ich schreibe. Was dabei entsteht, gibt es kein zweites Mal.</p>
+      <p class="en">I believe a good speech is not made of beautiful words, but of true ones. That is why I would rather listen once more before I write. What comes out of it exists only once.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section reveal" id="kontakt">
+    <h2><span class="de">Ich bin für Sie da.</span><span class="en">I am here for you.</span></h2>
+    <p class="de">Im Trauerfall erreichen Sie mich auch kurzfristig. Rufen Sie einfach an, alles Weitere besprechen wir in Ruhe.</p>
+    <p class="en">In a time of loss you can reach me at short notice. Just call, and we will talk through everything else calmly.</p>
+    <a href="tel:+491703666257" class="cta-phone-big">0170 3666257</a>
+    <br />
+    <a href="mailto:isabella-dietl@gmx.de" class="cta-btn">
+      <span class="de">Oder Nachricht schreiben</span><span class="en">Or send a message</span>
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">Herzpoetin</div>
+        <p>
+          <span class="de">Trauerrednerin & Freie Rednerin<br />Hemau · Oberpfalz · Bayern</span>
+          <span class="en">Eulogist & Celebrant<br />Hemau · Oberpfalz · Bavaria</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Isabella Dietl<br /><a href="tel:+491703666257">0170 3666257</a><br /><a href="mailto:isabella-dietl@gmx.de">isabella-dietl@gmx.de</a></p>
+      </div>
+      <div class="footer-col">
+        <p>
+          <a href="https://www.instagram.com/herzpoetin_isabella/" target="_blank" rel="noopener">Instagram</a><br />
+          <a href="#"><span class="de">Impressum</span><span class="en">Legal notice</span></a><br />
+          <a href="#"><span class="de">Datenschutz</span><span class="en">Privacy</span></a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Herzpoetin · Isabella Dietl &middot; <span class="de">Website von</span><span class="en">Website by</span> <a href="https://joselugo.de" target="_blank" rel="noopener">Jose Lugo</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    const toggle = document.getElementById('langToggle');
+    toggle.addEventListener('click', () => {
+      const next = document.body.dataset.lang === 'de' ? 'en' : 'de';
+      document.body.dataset.lang = next;
+      document.documentElement.lang = next;
+      toggle.textContent = next === 'de' ? 'EN' : 'DE';
+    });
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.animate(
+              [{ opacity: 0, transform: 'translateY(26px)' }, { opacity: 1, transform: 'none' }],
+              { duration: 600, easing: 'cubic-bezier(0.22, 0.61, 0.36, 1)' }
+            );
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    }
+  </script>
+</body>
+</html>
