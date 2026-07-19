@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Herzpoetin | Freie Rednerin für Trauungen & Trauerreden · Oberpfalz</title>
-  <meta name="description" content="Freie Trauungen, Trauerreden und Willkommensfeste in der Oberpfalz und ganz Bayern. Persönlich, ehrlich und von Herzen. Isabella Dietl, die Herzpoetin aus Hemau." />
+  <title>Herzpoetin | Freie Rednerin für Trauungen · Oberpfalz</title>
+  <meta name="description" content="Freie Trauungen und Willkommensfeste in der Oberpfalz und ganz Bayern. Persönlich, ehrlich und von Herzen. Isabella Dietl, die Herzpoetin aus Hemau." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Herzpoetin · Freie Rednerin" />
-  <meta property="og:description" content="Worte für Momente, die bleiben. Freie Trauungen und Trauerreden in der Oberpfalz und ganz Bayern." />
+  <meta property="og:description" content="Worte für Momente, die bleiben. Freie Trauungen in der Oberpfalz und ganz Bayern." />
   <meta property="og:image" content="https://images.pexels.com/photos/15865435/pexels-photo-15865435.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2214%22 fill=%22%232D4A3E%22/><text x=%2250%22 y=%2270%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23FDFAF6%22 font-family=%22Georgia%22 font-style=%22italic%22>H</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -198,8 +198,10 @@
     }
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
+      max-width: 720px;
+      margin: 0 auto;
     }
     .category-card {
       position: relative;
@@ -308,9 +310,6 @@
       color: #888;
       line-height: 1.7;
     }
-
-    /* farewell band */
-    .farewell-band { background: #F2EDE8; }
 
     /* ── Full-width image break ── */
     .full-image {
@@ -555,7 +554,6 @@
     <div class="nav-right">
       <div class="nav-links">
         <a href="#trauung"><span class="de">Freie Trauung</span><span class="en">Weddings</span></a>
-        <a href="#trauerrede"><span class="de">Trauerrede</span><span class="en">Farewells</span></a>
         <a href="#ueber-mich"><span class="de">Über mich</span><span class="en">About</span></a>
         <a href="#kontakt"><span class="de">Kontakt</span><span class="en">Contact</span></a>
       </div>
@@ -590,8 +588,8 @@
     <div class="intro-label">
       <span class="de">Willkommen</span><span class="en">Welcome</span>
     </div>
-    <p class="de">Manche Momente lassen sich nicht wiederholen. Der Tag, an dem ihr euch das Ja-Wort gebt. Die Stunde, in der wir einen geliebten Menschen verabschieden. Für diese Momente schreibe ich Worte, die tragen: persönlich, ehrlich und von Herzen.</p>
-    <p class="en">Some moments cannot be repeated. The day you say yes to each other. The hour we say goodbye to someone we love. For these moments I write words that carry: personal, honest, and from the heart.</p>
+    <p class="de">Manche Momente lassen sich nicht wiederholen. Der Tag, an dem ihr euch das Ja-Wort gebt. Der Nachmittag, an dem ein kleiner Mensch willkommen geheißen wird. Für diese Momente schreibe ich Worte, die tragen: persönlich, ehrlich und von Herzen.</p>
+    <p class="en">Some moments cannot be repeated. The day you say yes to each other. The afternoon a little person is welcomed into the world. For these moments I write words that carry: personal, honest, and from the heart.</p>
   </section>
 
   <!-- Category cards -->
@@ -601,13 +599,6 @@
         <img src="https://images.pexels.com/photos/30335822/pexels-photo-30335822.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800" alt="Freie Trauung bei goldenem Abendlicht" loading="lazy" />
         <div class="category-card-overlay">
           <h3><span class="de">Freie Trauung</span><span class="en">Wedding Ceremony</span></h3>
-          <span><span class="de">Mehr erfahren</span><span class="en">Learn more</span></span>
-        </div>
-      </a>
-      <a class="category-card" href="#trauerrede">
-        <img src="https://images.pexels.com/photos/29347337/pexels-photo-29347337.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800" alt="Stiller Waldweg im Morgenlicht" loading="lazy" />
-        <div class="category-card-overlay">
-          <h3><span class="de">Trauerrede</span><span class="en">Funeral Eulogy</span></h3>
           <span><span class="de">Mehr erfahren</span><span class="en">Learn more</span></span>
         </div>
       </a>
@@ -659,41 +650,6 @@
     <img src="https://images.pexels.com/photos/11339295/pexels-photo-11339295.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1600" alt="Brautpaar hält Hände im Abendlicht" loading="lazy" />
   </div>
 
-  <!-- Farewell section -->
-  <div class="farewell-band">
-    <section class="services-section reveal" id="trauerrede">
-      <div class="services-header">
-        <h2><span class="de">Abschied & Trauerrede</span><span class="en">Farewell & Eulogy</span></h2>
-      </div>
-      <p class="services-lede de">Wenn Worte am schwersten fallen, dürfen Sie sie mir anvertrauen. In einem ruhigen Gespräch höre ich zu und verwandle Erinnerungen in eine Rede, die ein Leben würdigt: ehrlich, warm und ohne leere Floskeln. Damit der Abschied so persönlich wird wie der Mensch, dem er gilt.</p>
-      <p class="services-lede en">When words are hardest to find, you may entrust them to me. In a quiet conversation I listen, and turn memories into a eulogy that honors a life: honest, warm, and free of empty phrases. So the farewell becomes as personal as the person it is for.</p>
-      <div class="service-item">
-        <div class="service-num">01</div>
-        <div>
-          <h3><span class="de">Das Gespräch</span><span class="en">The conversation</span></h3>
-          <p class="de">Ich komme zu Ihnen nach Hause oder wir telefonieren, ganz wie es für Sie leichter ist. Sie erzählen von dem Menschen, ich höre zu.</p>
-          <p class="en">I come to your home or we speak on the phone, whichever is easier for you. You tell me about the person; I listen.</p>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="service-num">02</div>
-        <div>
-          <h3><span class="de">Die Lebensrede</span><span class="en">The eulogy</span></h3>
-          <p class="de">Innerhalb weniger Tage entsteht eine Rede, die das Leben würdigt, Trost spendet und Raum für ein Lächeln lässt.</p>
-          <p class="en">Within a few days I write a eulogy that honors the life lived, offers comfort, and leaves room for a smile.</p>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="service-num">03</div>
-        <div>
-          <h3><span class="de">Die Trauerfeier</span><span class="en">The service</span></h3>
-          <p class="de">Ich gestalte und halte die Feier in enger Abstimmung mit Ihnen und dem Bestattungshaus. Sie müssen an nichts weiter denken.</p>
-          <p class="en">I shape and hold the service in close coordination with you and the funeral home. There is nothing more you need to think of.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
   <!-- Quote band -->
   <section class="quote-band reveal">
     <div class="label">Herzpoetin</div>
@@ -716,9 +672,9 @@
       <cite><span class="de">Julia & Markus · Freie Trauung</span><span class="en">Julia & Markus · Wedding</span></cite>
     </div>
     <div class="testimonial">
-      <blockquote class="de">„Sie hat unseren Vater nie kennengelernt, und doch klang jedes Wort, als wären sie ein Leben lang befreundet gewesen. Danke für diesen würdevollen Abschied."</blockquote>
-      <blockquote class="en">"She never met our father, and yet every word sounded as if they had been friends for a lifetime. Thank you for such a dignified farewell."</blockquote>
-      <cite><span class="de">Familie H. · Trauerrede</span><span class="en">Family H. · Eulogy</span></cite>
+      <blockquote class="de">„Das Willkommensfest für unsere Tochter war der schönste Nachmittag des Jahres. Kein Pathos, keine Floskeln, nur unsere kleine Familie in guten Worten."</blockquote>
+      <blockquote class="en">"The welcoming ceremony for our daughter was the loveliest afternoon of the year. No pathos, no clichés, just our little family in good words."</blockquote>
+      <cite><span class="de">Familie B. · Willkommensfest</span><span class="en">Family B. · Baby welcoming</span></cite>
     </div>
     <div class="testimonial">
       <blockquote class="de">„Vom ersten Kaffee bis zum Ja-Wort haben wir uns verstanden gefühlt. Professionell, warm und einfach echt."</blockquote>
@@ -739,8 +695,8 @@
     <div class="about-text">
       <div class="about-label"><span class="de">Über mich</span><span class="en">About me</span></div>
       <h2><span class="de">Ich bin Isabella.</span><span class="en">I am Isabella.</span></h2>
-      <p class="de">Zu Hause in Hemau, zwischen Regensburg und Neumarkt, mitten in der Oberpfalz. Als Herzpoetin begleite ich Paare und Familien durch die größten Momente ihres Lebens: durch das Ja, durch den Abschied und durch alles, was ein Leben ausmacht.</p>
-      <p class="en">At home in Hemau, between Regensburg and Neumarkt, in the heart of the Oberpfalz. As the Herzpoetin I walk with couples and families through the biggest moments of their lives: through the yes, through the goodbye, and through everything that makes up a life.</p>
+      <p class="de">Zu Hause in Hemau, zwischen Regensburg und Neumarkt, mitten in der Oberpfalz. Als Herzpoetin begleite ich Paare und Familien durch die schönsten Momente ihres Lebens: durch das Ja, durch die ersten Feste und durch alles, was gefeiert werden will.</p>
+      <p class="en">At home in Hemau, between Regensburg and Neumarkt, in the heart of the Oberpfalz. As the Herzpoetin I walk with couples and families through the most beautiful moments of their lives: through the yes, through the first celebrations, and through everything worth celebrating.</p>
       <p class="de">Ich glaube, dass eine gute Rede nicht aus schönen Worten besteht, sondern aus wahren. Deshalb höre ich lieber einmal mehr zu, bevor ich schreibe. Was dabei entsteht, gibt es kein zweites Mal.</p>
       <p class="en">I believe a good speech is not made of beautiful words, but of true ones. That is why I would rather listen once more before I write. What comes out of it exists only once.</p>
     </div>
@@ -749,8 +705,8 @@
   <!-- CTA -->
   <section class="cta-section reveal" id="kontakt">
     <h2><span class="de">Lernen wir uns kennen.</span><span class="en">Let's get to know each other.</span></h2>
-    <p class="de">Ob Trauung, Trauerrede oder Willkommensfest: Jede Zeremonie beginnt mit einem Gespräch. Das erste ist immer kostenlos.</p>
-    <p class="en">Whether a wedding, a eulogy, or a welcoming ceremony: every ceremony begins with a conversation. The first one is always free.</p>
+    <p class="de">Ob freie Trauung oder Willkommensfest: Jede Zeremonie beginnt mit einem Gespräch. Das erste ist immer kostenlos.</p>
+    <p class="en">Whether a wedding or a welcoming ceremony: every ceremony begins with a conversation. The first one is always free.</p>
     <a href="mailto:isabella-dietl@gmx.de" class="cta-btn">
       <span class="de">Nachricht schreiben</span><span class="en">Send a message</span>
     </a>
