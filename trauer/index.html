@@ -117,7 +117,7 @@
       z-index: 1;
     }
     .xhero-frame video { width: 100%; height: 100%; object-fit: cover; }
-    .xhero-shade { position: absolute; inset: 0; background: #141E1A; opacity: 0.5; }
+    .xhero-shade { position: absolute; inset: 0; background: #141E1A; opacity: 0.32; }
     .xhero-titles {
       position: relative; z-index: 2;
       display: flex; flex-direction: column; align-items: center;
@@ -577,7 +577,7 @@
     <h1 class="sr-only">Herzpoetin · Trauerrednerin in der Oberpfalz</h1>
     <div class="xhero-bg" id="xBg"></div>
     <div class="xhero-frame" id="xFrame">
-      <video src="https://videos.pexels.com/video-files/18910801/18910801-hd_1280_720_24fps.mp4" poster="https://images.pexels.com/videos/18910801/pexels-photo-18910801.jpeg?auto=compress&cs=tinysrgb&w=1280" autoplay muted loop playsinline preload="auto"></video>
+      <video src="https://videos.pexels.com/video-files/16000649/16000649-hd_1280_720_24fps.mp4" poster="https://images.pexels.com/videos/16000649/pexels-photo-16000649.jpeg?auto=compress&cs=tinysrgb&w=1280" autoplay muted loop playsinline preload="auto"></video>
       <div class="xhero-shade" id="xShade"></div>
     </div>
     <div class="xhero-label" id="xLabel"><span class="de">Trauerrednerin · Oberpfalz & Bayern</span><span class="en">Eulogist · Bavaria</span></div>
@@ -768,7 +768,7 @@
       xFrame.style.width = (300 + xp * (m ? 650 : 1250)) + 'px';
       xFrame.style.height = (400 + xp * (m ? 200 : 400)) + 'px';
       xBg.style.opacity = String(1 - xp);
-      xShade.style.opacity = String(Math.max(0.2, 0.5 - xp * 0.3));
+      xShade.style.opacity = String(Math.max(0.12, 0.32 - xp * 0.2));
       const tx = xp * (m ? 180 : 150);
       xTitleL.style.transform = 'translateX(-' + tx + 'vw)';
       xTitleR.style.transform = 'translateX(' + tx + 'vw)';
