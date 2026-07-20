@@ -87,84 +87,70 @@
       .nav-links { display: none; }
     }
 
-    /* ── Hero ── */
-    .hero {
+    /* ── Scroll-expand hero (adapted from ScrollExpandMedia) ── */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .xhero {
       position: relative;
-      height: 100vh;
-      min-height: 560px;
+      min-height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       overflow: hidden;
     }
-    .hero-bg {
+    .xhero-bg {
       position: absolute;
       inset: 0;
       background-image: url('https://images.pexels.com/photos/29451794/pexels-photo-29451794.jpeg?auto=compress&cs=tinysrgb&w=1920');
       background-size: cover;
       background-position: center 60%;
-      animation: heroZoom 18s ease-out forwards;
     }
-    @keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
-    .hero::after {
-      content: '';
+    .xhero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(44,62,54,0.25); }
+    .xhero-frame {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(44,62,54,0.35) 0%, rgba(44,62,54,0.2) 55%, #FDFAF6 100%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px; height: 400px;
+      max-width: 95vw; max-height: 85vh;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.35);
+      z-index: 1;
     }
-    .hero-content { position: relative; z-index: 2; padding: 0 1.5rem; }
-    .hero-label {
-      font-size: 0.62rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      color: rgba(253,250,246,0.9);
-      margin-bottom: 1.5rem;
-      text-shadow: 0 1px 12px rgba(44,62,54,0.4);
+    .xhero-frame video { width: 100%; height: 100%; object-fit: cover; }
+    .xhero-shade { position: absolute; inset: 0; background: #141E1A; opacity: 0.5; }
+    .xhero-titles {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 0.75rem; text-align: center;
+      mix-blend-mode: difference;
+      pointer-events: none;
+      padding: 0 1rem;
     }
-    .hero h1 {
+    .xhero-label {
+      font-size: 0.62rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.28em;
+      color: rgba(255,255,255,0.85);
+    }
+    .xhero-titles h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 9vw, 5.5rem);
-      font-weight: 500;
-      color: #FDFAF6;
-      line-height: 1;
-      text-shadow: 0 2px 24px rgba(44,62,54,0.45);
+      font-style: italic; font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.05;
+      color: rgba(255,255,255,0.92);
+      will-change: transform;
     }
-    .hero-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.15rem, 3vw, 1.6rem);
-      font-style: italic;
-      font-weight: 400;
-      color: rgba(253,250,246,0.95);
-      margin-top: 1rem;
-      text-shadow: 0 1px 16px rgba(44,62,54,0.45);
+    .xhero-hint {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%); z-index: 2;
+      font-size: 0.55rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.7);
+      mix-blend-mode: difference;
     }
-    .hero-cta {
-      display: inline-block;
-      background: #FDFAF6;
-      color: #2D4A3E;
-      padding: 0.85rem 2.5rem;
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 2.25rem;
-      transition: all 0.3s;
-    }
-    .hero-cta:hover { background: #9B6B4A; color: #FDFAF6; transform: translateY(-2px); }
-    .hero-scroll {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      font-size: 0.55rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: rgba(44,62,54,0.55);
-    }
+    #pageContent { transition: opacity 0.7s ease; }
+    #pageContent.fade-init { opacity: 0; }
+    #pageContent.visible { opacity: 1 !important; }
+    body.hero-locked { overflow: hidden; }
 
     /* ── Intro ── */
     .intro {
@@ -578,27 +564,23 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-label">
-        <span class="de">Trauerrednerin · Oberpfalz & Bayern</span>
-        <span class="en">Eulogist · Bavaria</span>
-      </div>
-      <h1>Herzpoetin</h1>
-      <div class="hero-tagline">
-        <span class="de">Worte, die tragen, wenn eigene fehlen.</span>
-        <span class="en">Words that carry, when your own are missing.</span>
-      </div>
-      <a href="#kontakt" class="hero-cta">
-        <span class="de">Kontakt aufnehmen</span><span class="en">Get in touch</span>
-      </a>
+  <!-- Scroll-expand hero -->
+  <header class="xhero">
+    <h1 class="sr-only">Herzpoetin · Trauerrednerin in der Oberpfalz</h1>
+    <div class="xhero-bg" id="xBg"></div>
+    <div class="xhero-frame" id="xFrame">
+      <video src="https://videos.pexels.com/video-files/11349556/11349556-hd_1280_720_30fps.mp4" poster="https://images.pexels.com/videos/11349556/dirt-early-fog-forest-11349556.jpeg?auto=compress&cs=tinysrgb&w=1280" autoplay muted loop playsinline preload="auto"></video>
+      <div class="xhero-shade" id="xShade"></div>
     </div>
-    <div class="hero-scroll">
-      <span class="de">Entdecken</span><span class="en">Scroll</span>
+    <div class="xhero-titles">
+      <div class="xhero-label" id="xLabel"><span class="de">Trauerrednerin · Oberpfalz & Bayern</span><span class="en">Eulogist · Bavaria</span></div>
+      <h2 id="xTitleL"><span class="de">Worte,</span><span class="en">Words</span></h2>
+      <h2 id="xTitleR"><span class="de">die tragen.</span><span class="en">that carry.</span></h2>
     </div>
+    <div class="xhero-hint" id="xHint"><span class="de">Scrollen zum Entdecken</span><span class="en">Scroll to explore</span></div>
   </header>
+
+  <div id="pageContent">
 
   <!-- Intro -->
   <section class="intro reveal">
@@ -740,13 +722,10 @@
       &copy; 2026 Herzpoetin · Isabella Dietl &middot; <span class="de">Website von</span><span class="en">Website by</span> <a href="https://joselugo.de" target="_blank" rel="noopener">Jose Lugo</a>
     </div>
   </footer>
+  </div><!-- /pageContent -->
 
   <script>
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-
+    // Language toggle (DE default)
     const toggle = document.getElementById('langToggle');
     toggle.addEventListener('click', () => {
       const next = document.body.dataset.lang === 'de' ? 'en' : 'de';
@@ -755,7 +734,96 @@
       toggle.textContent = next === 'de' ? 'EN' : 'DE';
     });
 
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    // Scroll-expand hero, vanilla adaptation of the ScrollExpandMedia pattern:
+    // wheel/touch is intercepted until the floating video window has grown to
+    // full size, then normal scrolling takes over. Scrolling up at the very
+    // top shrinks it again. Reduced motion gets the expanded state directly.
+    const nav = document.getElementById('nav');
+    const content = document.getElementById('pageContent');
+    const xFrame = document.getElementById('xFrame');
+    const xBg = document.getElementById('xBg');
+    const xShade = document.getElementById('xShade');
+    const xTitleL = document.getElementById('xTitleL');
+    const xTitleR = document.getElementById('xTitleR');
+    const xLabel = document.getElementById('xLabel');
+    const xHint = document.getElementById('xHint');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const clamp01 = v => Math.min(Math.max(v, 0), 1);
+    const isMobile = () => window.innerWidth < 768;
+    let xp = 0, expanded = false, touchY = 0;
+
+    function syncNav() {
+      nav.classList.toggle('scrolled', window.scrollY > 50 || xp > 0.35);
+    }
+    function render() {
+      const m = isMobile();
+      xFrame.style.width = (300 + xp * (m ? 650 : 1250)) + 'px';
+      xFrame.style.height = (400 + xp * (m ? 200 : 400)) + 'px';
+      xBg.style.opacity = String(1 - xp);
+      xShade.style.opacity = String(Math.max(0.2, 0.5 - xp * 0.3));
+      const tx = xp * (m ? 180 : 150);
+      xTitleL.style.transform = 'translateX(-' + tx + 'vw)';
+      xTitleR.style.transform = 'translateX(' + tx + 'vw)';
+      const fade = String(Math.max(0, 1 - xp * 2));
+      xLabel.style.opacity = fade;
+      xHint.style.opacity = fade;
+      content.classList.toggle('visible', expanded || xp > 0.75);
+      syncNav();
+    }
+    function setExpanded(v) {
+      expanded = v;
+      document.body.classList.toggle('hero-locked', !v);
+      render();
+    }
+    function bump(d) {
+      xp = clamp01(xp + d);
+      if (xp >= 1 && !expanded) setExpanded(true); else render();
+    }
+
+    if (reduceMotion) {
+      xp = 1;
+      setExpanded(true);
+    } else {
+      content.classList.add('fade-init');
+      setExpanded(false);
+      window.addEventListener('wheel', (e) => {
+        if (expanded && e.deltaY < 0 && window.scrollY <= 5) {
+          setExpanded(false);
+          e.preventDefault();
+        } else if (!expanded) {
+          e.preventDefault();
+          bump(e.deltaY * 0.0009);
+        }
+      }, { passive: false });
+      window.addEventListener('touchstart', (e) => { touchY = e.touches[0].clientY; }, { passive: false });
+      window.addEventListener('touchmove', (e) => {
+        if (!touchY) return;
+        const dy = touchY - e.touches[0].clientY;
+        if (expanded && dy < -20 && window.scrollY <= 5) {
+          setExpanded(false);
+          e.preventDefault();
+        } else if (!expanded) {
+          e.preventDefault();
+          bump(dy * (dy < 0 ? 0.008 : 0.005));
+          touchY = e.touches[0].clientY;
+        }
+      }, { passive: false });
+      window.addEventListener('touchend', () => { touchY = 0; });
+      window.addEventListener('keydown', (e) => {
+        if (!expanded && ['ArrowDown', 'PageDown', ' '].includes(e.key)) {
+          e.preventDefault();
+          bump(0.2);
+        }
+      });
+      window.addEventListener('resize', render, { passive: true });
+      document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => {
+        if (!expanded) { xp = 1; setExpanded(true); }
+      }));
+    }
+    window.addEventListener('scroll', syncNav, { passive: true });
+
+    // Reveal on scroll: additive fade-up, content visible without JS
+    if (!reduceMotion && 'IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
           if (e.isIntersecting) {
