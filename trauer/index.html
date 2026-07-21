@@ -103,8 +103,12 @@
       background-image: url('https://images.pexels.com/photos/29731003/pexels-photo-29731003.jpeg?auto=compress&cs=tinysrgb&w=1920');
       background-size: cover;
       background-position: center 60%;
+      filter: sepia(0.32) saturate(0.88) hue-rotate(-6deg) brightness(1.03) contrast(0.97);
     }
-    .xhero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(44,62,54,0.25); }
+    .xhero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(rgba(120,96,58,0.12), rgba(120,96,58,0.12)), rgba(44,62,54,0.18);
+    }
     .xhero-frame {
       position: absolute;
       top: 50%; left: 50%;
@@ -116,8 +120,11 @@
       box-shadow: 0 0 50px rgba(0,0,0,0.35);
       z-index: 1;
     }
-    .xhero-frame video { width: 100%; height: 100%; object-fit: cover; }
-    .xhero-shade { position: absolute; inset: 0; background: #141E1A; opacity: 0.32; }
+    .xhero-frame video {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: sepia(0.32) saturate(0.88) hue-rotate(-6deg) brightness(1.03) contrast(0.97);
+    }
+    .xhero-shade { position: absolute; inset: 0; background: #1B1610; opacity: 0.30; }
     .xhero-titles {
       position: relative; z-index: 2;
       display: flex; flex-direction: column; align-items: center;
